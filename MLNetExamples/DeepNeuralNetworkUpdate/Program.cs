@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Drawing;
 
 using Microsoft.ML;
 using Microsoft.ML.Vision;
@@ -73,8 +73,6 @@ namespace DeepNeuralNetworkUpdate
                 Console.WriteLine($"{cr}Model Saved...{cr}{modelPath}{cr}");
             }
 
-            var predictionEngine = context.Model.CreatePredictionEngine<ImageModelInput, ImagePrediction>(model);
-
             var testImagesFolder = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "test");
             var testFiles = Directory.GetFiles(testImagesFolder, "*", SearchOption.AllDirectories);
 
@@ -85,6 +83,8 @@ namespace DeepNeuralNetworkUpdate
             });
 
             // ---------------
+
+            var predictionEngine = context.Model.CreatePredictionEngine<ImageModelInput, ImagePrediction>(model);
 
             var line = new string('=', 50);
             Console.WriteLine($"{cr}{line}{cr}");
