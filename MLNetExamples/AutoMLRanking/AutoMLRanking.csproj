@@ -8,6 +8,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.ML" Version="1.5.2" />
     <PackageReference Include="Microsoft.ML.AutoML" Version="0.17.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
   </ItemGroup>
 
   <ItemGroup>

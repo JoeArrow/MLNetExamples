@@ -9,6 +9,7 @@
     <PackageReference Include="Microsoft.ML" Version="1.5.5" />
     <PackageReference Include="Microsoft.ML.TensorFlow" Version="1.5.5" />
     <PackageReference Include="Microsoft.ML.TensorFlow.Redist" Version="0.14.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
   </ItemGroup>
 
   <ItemGroup>

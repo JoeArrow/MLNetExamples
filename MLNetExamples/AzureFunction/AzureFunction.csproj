@@ -9,6 +9,7 @@
     <PackageReference Include="Microsoft.Extensions.ML" Version="0.15.1" />
     <PackageReference Include="Microsoft.ML" Version="1.4.0" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.29" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
   </ItemGroup>
   <ItemGroup>
