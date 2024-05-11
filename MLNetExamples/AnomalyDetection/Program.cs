@@ -1,7 +1,7 @@
-﻿using Microsoft.ML;
-using Microsoft.ML.Data;
-using System;
+﻿using System;
 using System.Linq;
+using Microsoft.ML;
+using Microsoft.ML.Data;
 
 namespace AnomalyDetection
 {
@@ -26,16 +26,15 @@ namespace AnomalyDetection
             var date = data.GetColumn<DateTime>("Date").ToArray();
 
             Console.WriteLine("Anomalies:");
+
             for (int i = 0; i < predictions.Count(); i++)
             {
                 if (predictions[i].Prediction[0] == 1)
                 {
-                    Console.WriteLine("{0}\t{1:0.0000}\t{2:0.00}\t{3:0.00}\t{4:0.00}",
+                    Console.WriteLine("{0, 25}\t{1:0.0000}\t{2:0.00}\t{3:0.00,-20}\t{4:0.00}",
                         date[i], energy[i], predictions[i].Prediction[0], predictions[i].Prediction[1], predictions[i].Prediction[2]);
                 }
             }
-
-            Console.ReadLine();
         }
     }
 }

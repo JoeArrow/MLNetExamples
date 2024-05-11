@@ -1,6 +1,5 @@
-﻿
+﻿using System;
 using Microsoft.ML.Data;
-using System;
 
 namespace AnomalyDetection
 {

@@ -1,7 +1,8 @@
-﻿using Microsoft.ML;
-using Microsoft.ML.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
+
+using Microsoft.ML;
+using Microsoft.ML.Data;
 
 namespace BagOfWords
 {
@@ -40,6 +41,7 @@ namespace BagOfWords
             var slots = slotNames.GetValues();
 
             Console.Write("NGrams: ");
+
             foreach (var featureRow in bagOfWordColumn)
             {
                 foreach (var item in featureRow.Items())
@@ -51,6 +53,7 @@ namespace BagOfWords
             }
 
             Console.Write("Word Counts: ");
+
             for (int i = 0; i < prediction.BagOfWords.Length; i++)
             {
                 Console.Write($"{prediction.BagOfWords[i]:F4}  ");

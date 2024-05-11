@@ -57,8 +57,6 @@ namespace BookRecommendations
             var bookData = LoadBookData();
 
             Console.WriteLine($"Predicted rating - {Math.Round(bookPrediction.Score, 1)} for book {bookData.FirstOrDefault(b => b.BookId == bookPredictionId).BookTitle}");
-
-            Console.ReadLine();
         }
 
         private static IList<Book> LoadBookData()
@@ -68,7 +66,7 @@ namespace BookRecommendations
             var reader = File.OpenRead($"{dataLocation}/bookfeatures.csv");
 
             var isHeader = true;
-            var line = String.Empty;
+            var line = string.Empty;
 
             using (var streamReader = new StreamReader(reader))
             {
