@@ -14,7 +14,7 @@
     <PackageReference Include="Microsoft.ML.ImageAnalytics" Version="1.5.2" />
     <PackageReference Include="Microsoft.ML.Vision" Version="1.5.2" />
 	<PackageReference Include="SciSharp.TensorFlow.Redist" Version="1.15.0" />
-	<PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
+	<PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
 
   </ItemGroup>
 
