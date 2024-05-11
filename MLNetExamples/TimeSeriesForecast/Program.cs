@@ -20,10 +20,10 @@ namespace TimeSeriesForecast
             var pipeline = context.Forecasting.ForecastBySsa(
                  nameof(RunForecast.RunTime),                   // Output column name for forecasted values
                  nameof(RunData.RunTime),                       // Input column name for the time series data (job run time)
-                 windowSize: 30,                                 // Size of the sliding window for SSA analysis
-                 seriesLength: 65,                             // Expected length of the time series pattern
+                 windowSize: 30,                                // Size of the sliding window for SSA analysis
+                 seriesLength: 31,                              // Expected length of the time series pattern
                  trainSize: 65,                                 // Size of the training dataset
-                 horizon: 1); 
+                 horizon: 5); 
 
             var model = pipeline.Fit(data);
 

@@ -36,8 +36,6 @@ namespace SimpleRegressionUpdate
             var prediction = predictionFunc.Predict(newData);
 
             Console.WriteLine($"Prediction - {prediction.PredictedSalary}");
-
-            Console.ReadLine();
         }
     }
 }
