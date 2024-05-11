@@ -20,7 +20,7 @@ namespace DeepNeuralNetworkUpdate
 
             if(File.Exists(modelPath))
             {
-                Console.WriteLine($"The model has already been trained...{cr}{cr}");
+                Console.WriteLine($"Loading the model...{cr}{cr}");
                 model = context.Model.Load(modelPath, out DataViewSchema inputSchema);
             }
             else
