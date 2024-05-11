@@ -18,10 +18,8 @@ namespace TransferLearning
             var pipeline = context.Transforms.Conversion.MapValueToKey("LabelKey", "Label")
                 .Append(context.Transforms.LoadImages("input", "images", nameof(ImageData.ImagePath)))
                 .Append(context.Transforms.ResizeImages("input", InceptionSettings.IMageWidth, InceptionSettings.ImageHeight, "input"))
-                .Append(context.Transforms.ExtractPixels("input", interleavePixelColors: InceptionSettings.ChannelsList, 
-                    offsetImage: InceptionSettings.Mean))
-                .Append(context.Model.LoadTensorFlowModel("./model/tensorflow_inception_graph.pb")
-                    .ScoreTensorFlowModel(new[] { "softmax2_pre_activation" }, new[] { "input" }, addBatchDimensionInput: true))
+                .Append(context.Transforms.ExtractPixels("input", interleavePixelColors: InceptionSettings.ChannelsList, offsetImage: InceptionSettings.Mean))
+                .Append(context.Model.LoadTensorFlowModel("./model/tensorflow_inception_graph.pb").ScoreTensorFlowModel(new[] { "softmax2_pre_activation" }, new[] { "input" }, addBatchDimensionInput: true))
                 .Append(context.MulticlassClassification.Trainers.LbfgsMaximumEntropy("LabelKey", "softmax2_pre_activation"))
                 .Append(context.Transforms.Conversion.MapKeyToValue("PredictedLabelValue", "PredictedLabel"));
 
@@ -69,8 +67,6 @@ namespace TransferLearning
             Console.WriteLine("\n------------Single prediction-----------------");
             Console.WriteLine($"Image {Path.GetFileName(singlePrediction.ImagePath)} was predicted as a {singlePrediction.PredictedLabelValue} " +
                 $"with a score of {singlePrediction.Score.Max()}");
-
-            Console.ReadLine();
         }
     }
 }

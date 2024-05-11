@@ -1,5 +1,6 @@
-﻿using Microsoft.ML.Data;
-using System;
+﻿using System;
+
+using Microsoft.ML.Data;
 
 namespace TimeSeriesForecast
 {

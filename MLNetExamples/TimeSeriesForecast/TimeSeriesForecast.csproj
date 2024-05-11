@@ -6,14 +6,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Program.cs~RF4151f058.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.ML" Version="1.5.0-preview" />
     <PackageReference Include="Microsoft.ML.TimeSeries" Version="1.5.0-preview" />
     <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
+    <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="energy_hourly.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="RunTimes.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
